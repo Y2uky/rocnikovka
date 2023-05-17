@@ -13,7 +13,7 @@ namespace Textový.editor
         static void Main(string[] args)
         {
 
-            Console.WriteLine("                                           Textový Editor                ");
+            Console.WriteLine("                                           Textový NEGR                ");
             Console.WriteLine("");
             Console.WriteLine("");
 
