@@ -9,7 +9,7 @@ namespace Textový.editor
 {
     internal class Program
     {
-       
+
         static void Main(string[] args)
         {
 
@@ -38,18 +38,81 @@ namespace Textový.editor
             {
                 DeleteFile();
             }
+
+
         }
 
-        private static void DeleteFile()
+
+
+        static void CreateNewFile()
         {
-       
+
+
+
+
+            Console.WriteLine("   [Napište název souboru: ]");
+            Console.WriteLine("");
+            string soubor = Console.ReadLine() + ".txt";
+            File.WriteAllText(soubor, "");
+
+            Console.WriteLine(" ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(" [Nový soubor vytvořen!]");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("");
             Console.WriteLine("");
 
-            Console.ForegroundColor = ConsoleColor.Blue;          
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("[ (read)  přečtení souboru ]");
+            Console.WriteLine("[ (write) pro změnu souboru ]");
             Console.WriteLine("[ (menu) pro vrácení na menu ]");
             Console.WriteLine("[ (exit) pro ukončení ]");
             Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("");
+
+            prostePotrebny1(soubor);
+        }
+
+        static void FindFile()
+        {
+
+
+
+        Soubor:
+
+            Console.WriteLine("   [Napište název souboru: ]");
+            Console.WriteLine("");
+
+            string soubor = Console.ReadLine() + ".txt";
+            if (!File.Exists(soubor)) //pokud soubor neexistuje, pošle člověka zpět
+            {
+                Console.WriteLine("");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(" ");
+                Console.WriteLine(" [Soubor Nexistuje]");
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("");
+                goto Soubor;
+            }
+
+            Console.WriteLine("");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine("[ (read)  přečtení souboru ]");
+            Console.WriteLine("[ (write) pro změnu souboru ]");
+            Console.WriteLine("[ (menu) pro vrácení na menu ]");
+            Console.WriteLine("[ (exit) pro ukončení ]");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("");
+
+
+            prostePotrebny1(soubor);
+        }
+
+        private static void DeleteFile()
+        {
+
+
+
         Soubor:
             Console.WriteLine("   [ Napiste nazev souboru ]");
             Console.WriteLine("");
@@ -63,31 +126,21 @@ namespace Textový.editor
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("");
                 goto Soubor;
-
             }
-
 
             try
             {
-                                                                 
                 // Check if file exists with its full path    
-                 if (File.Exists(Path.Combine( soubor)))
+                if (File.Exists(Path.Combine(soubor)))
                 {
                     // If file found, delete it    
-                    File.Delete(Path.Combine( soubor));
+                    File.Delete(Path.Combine(soubor));
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("");
                     Console.WriteLine(" [ soubor byl smazán ]");
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine("");
-                   
-                   
                 }
-
-             
-
-
-
             }
 
             catch (IOException ioExp)
@@ -95,165 +148,55 @@ namespace Textový.editor
                 Console.WriteLine(ioExp.Message);
             }
 
-            while (true)
-            {
-                string idk = Console.ReadLine();
-                if (idk == "read")
-                {
-                    Console.WriteLine("");
-                    Console.Write(" :  "); PrecteniSlozky(soubor);
-                    Console.WriteLine("");
-                    Console.WriteLine("");
-                }
-
-                if (idk == "write")
-                {
-                    Console.WriteLine("");
-                    Console.Write(""); ZapisDoSložky(soubor);
-                    Console.WriteLine("");
-                }
-
-                if (idk == "menu")
-
-                {
-
-
-                    string[] pole = new string[3];
-                    pole[0] = "new file";
-                    pole[1] = "find file";
-                    pole[2] = "delete file";
-                    int result = DecisionMaker(3, pole, ConsoleColor.White, ConsoleColor.Blue);
-
-                    if (result == 0)
-                    {
-                        CreateNewFile();
-                    }
-
-                    if (result == 1)
-                    {
-                        FindFile();
-                    }
-
-                    if (result == 2)
-                    {
-                        DeleteFile();
-                    }
-                }
-
-                if (idk == "exit")
-                {
-                    Environment.Exit(0);
-                }
-            }
+            prostePotrebny1(soubor);
 
         }
 
-        static void CreateNewFile()
+
+
+
+        private static void prostePotrebny()
         {
-            Console.WriteLine("   [Napište název souboru: ]");
-            Console.WriteLine("");
-            string soubor = Console.ReadLine() + ".txt";
-            File.WriteAllText(soubor, "");
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(" [Nový soubor vytvořen!]");
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("");
 
 
-            Console.WriteLine("");
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("[ (read)  přečtení souboru ]");
-            Console.WriteLine("[ (write) pro změnu souboru ]");
-            Console.WriteLine("[ (menu) pro vrácení na menu ]");
-            Console.WriteLine("[ (exit) pro ukončení ]");
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("");
+            string idk1 = Console.ReadLine();
+            if (idk1 == "menu")
 
-            while (true)
-
-            {
-
-             
-                string idk = Console.ReadLine();
-
-                if (idk == "read")
-                {
-                    Console.WriteLine("");
-                    Console.Write(" :  "); PrecteniSlozky(soubor);
-                    Console.WriteLine("");
-                    Console.WriteLine("");
-                }
-
-                if (idk == "write")
-
-                {
-                    Console.WriteLine("");
-                    Console.Write(""); ZapisDoSložky(soubor);
-                    Console.WriteLine("");
-                }
-
-                if (idk == "menu")
-
-                {
-
-
-                    string[] pole = new string[3];
-                    pole[0] = "new file";
-                    pole[1] = "find file";
-                    pole[2] = "delete file";
-                    int result = DecisionMaker(3, pole, ConsoleColor.White, ConsoleColor.Blue);
-
-                    if (result == 0)
-                    {
-                        CreateNewFile();
-                    }
-
-                    if (result == 1)
-                    {
-                        FindFile();
-                    }
-
-                    if (result == 2)
-                    {
-                        DeleteFile();
-                    }
-                }
-
-                if (idk == "exit")
-                {
-                    Environment.Exit(0);
-                }
-
-            }
-        }
-
-        static void FindFile()
-        {
-        Soubor:
-            Console.WriteLine("   [Napište název souboru: ]");
-            Console.WriteLine("");
-
-            string soubor = Console.ReadLine() + ".txt";
-            if (!File.Exists(soubor)) //pokud soubor neexistuje, pošle člověka zpět
             {
                 Console.WriteLine("");
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine(" [Soubor Nexistuje]");
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("[ (menu) pro vrácení na menu ]");
+                Console.WriteLine("[ (Enter) pro pokračování  ]");
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("");
-                goto Soubor;
+                Console.WriteLine("");
 
+                string[] pole = new string[3];
+                pole[0] = "new file";
+                pole[1] = "find file";
+                pole[2] = "delete file";
+                int result = DecisionMaker(3, pole, ConsoleColor.White, ConsoleColor.Blue);
+
+                if (result == 0)
+                {
+                    CreateNewFile();
+                }
+
+                if (result == 1)
+                {
+                    FindFile();
+                }
+
+                if (result == 2)
+                {
+                    DeleteFile();
+                }
             }
 
-            Console.WriteLine("");
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("[ (read)  přečtení souboru ]");
-            Console.WriteLine("[ (write) pro změnu souboru ]");
-            Console.WriteLine("[ (menu) pro vrácení na menu ]");
-            Console.WriteLine("[ (exit) pro ukončení ]");
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("");
+        }
 
+        private static void prostePotrebny1(string soubor)
+        {
 
             while (true)
             {
@@ -272,11 +215,9 @@ namespace Textový.editor
                     Console.Write(""); ZapisDoSložky(soubor);
                     Console.WriteLine("");
                 }
-
                 if (idk == "menu")
 
                 {
-
                     string[] pole = new string[3];
                     pole[0] = "new file";
                     pole[1] = "find file";
@@ -305,6 +246,9 @@ namespace Textový.editor
                 }
             }
         }
+
+
+
         static void PrecteniSlozky(string soubor)
         {
             if (File.Exists(soubor))
@@ -316,16 +260,14 @@ namespace Textový.editor
             }
             else
             {
+                Console.WriteLine(" ");
+                Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(" [soubor neexistuje!]");
+                Console.ForegroundColor = ConsoleColor.White;
             }
 
 
         }
-
-      
-
-
-
 
         static void ZapisDoSložky(string soubor)
         {
@@ -335,16 +277,21 @@ namespace Textový.editor
                 string novytext = Console.ReadLine();
                 File.WriteAllText(soubor, novytext);
                 Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine(" ");
                 Console.WriteLine(" [Soubor upraven]");
                 Console.ForegroundColor = ConsoleColor.White;
             }
             else
             {
                 Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(" ");
                 Console.WriteLine(" [soubor neexistuje!]");
                 Console.ForegroundColor = ConsoleColor.White;
             }
         }
+
+
+
         public static int DecisionMaker(int decisionNum, string[] decisions, ConsoleColor mainColor, ConsoleColor highlightColor)
         {
             int currentDecision = 0;
@@ -353,6 +300,7 @@ namespace Textový.editor
                 Console.Clear();
                 Console.WriteLine("                                           Textový Editor                ");
                 Console.WriteLine("");
+
                 for (int i = 0; i < decisionNum; i++)
                 {
                     if (currentDecision == i)
