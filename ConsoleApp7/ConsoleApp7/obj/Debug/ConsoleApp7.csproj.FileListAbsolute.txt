@@ -14,3 +14,11 @@ C:\Users\rohac\Desktop\programovani\lukas\rocnikovka\ConsoleApp7\ConsoleApp7\obj
 C:\Users\rohac\Desktop\programovani\lukas\rocnikovka\ConsoleApp7\ConsoleApp7\obj\Debug\ConsoleApp7.csproj.CoreCompileInputs.cache
 C:\Users\rohac\Desktop\programovani\lukas\rocnikovka\ConsoleApp7\ConsoleApp7\obj\Debug\ConsoleApp7.exe
 C:\Users\rohac\Desktop\programovani\lukas\rocnikovka\ConsoleApp7\ConsoleApp7\obj\Debug\ConsoleApp7.pdb
+C:\Users\Lukáš\Documents\GitHub\rocnikovka\ConsoleApp7\ConsoleApp7\bin\Debug\ConsoleApp7.exe.config
+C:\Users\Lukáš\Documents\GitHub\rocnikovka\ConsoleApp7\ConsoleApp7\bin\Debug\ConsoleApp7.exe
+C:\Users\Lukáš\Documents\GitHub\rocnikovka\ConsoleApp7\ConsoleApp7\bin\Debug\ConsoleApp7.pdb
+C:\Users\Lukáš\Documents\GitHub\rocnikovka\ConsoleApp7\ConsoleApp7\obj\Debug\ConsoleApp7.csproj.AssemblyReference.cache
+C:\Users\Lukáš\Documents\GitHub\rocnikovka\ConsoleApp7\ConsoleApp7\obj\Debug\ConsoleApp7.csproj.SuggestedBindingRedirects.cache
+C:\Users\Lukáš\Documents\GitHub\rocnikovka\ConsoleApp7\ConsoleApp7\obj\Debug\ConsoleApp7.csproj.CoreCompileInputs.cache
+C:\Users\Lukáš\Documents\GitHub\rocnikovka\ConsoleApp7\ConsoleApp7\obj\Debug\ConsoleApp7.exe
+C:\Users\Lukáš\Documents\GitHub\rocnikovka\ConsoleApp7\ConsoleApp7\obj\Debug\ConsoleApp7.pdb
