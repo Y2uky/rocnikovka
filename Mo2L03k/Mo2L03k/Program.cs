@@ -11,12 +11,13 @@ namespace Textový.editor
     {
         static void Main(string[] args)
         {
-            string[] pole = new string[3];
+            string[] pole = new string[4];
             pole[0] = "create new file";
             pole[1] = "find file";
             pole[2] = "delete file";
+            pole[3] = "exit";
 
-            int result = DecisionMaker(3, pole, ConsoleColor.White, ConsoleColor.Blue);
+            int result = DecisionMaker(4, pole, ConsoleColor.White, ConsoleColor.Blue);
 
             if (result == 0)
             {
@@ -29,6 +30,10 @@ namespace Textový.editor
             if (result == 2)
             {
                 DeleteFile();
+            }
+            if (result == 3)
+            {
+                Environment.Exit(0);
             }
         }
         static void CreateNewFile()
@@ -92,12 +97,6 @@ namespace Textový.editor
             Findmenu:
             Console.WriteLine("");
             string[] mm = new string[4] { "Přečtení souboru", "Změna souboru", "Zpět do menu", "Ukončení" };
-            /*
-            Console.WriteLine("[ (read)  přečtení souboru ]");
-            Console.WriteLine("[ (write) pro změnu souboru ]");
-            Console.WriteLine("[ (menu) pro vrácení na menu ]");
-            Console.WriteLine("[ (exit) pro ukončení ]");
-            Console.WriteLine("");*/
 
             prostePotrebny1(soubor, DecisionMaker(4, mm, ConsoleColor.White, ConsoleColor.Blue));
             Console.ReadKey();goto Findmenu;
@@ -107,6 +106,7 @@ namespace Textový.editor
         {
         Soubor:
             Console.WriteLine("   [ Napiste nazev souboru ]");
+            Console.WriteLine("   [ Pro návrat do menu napište menu ]");
             Console.WriteLine("");
 
             string soubor = Console.ReadLine() + ".txt";
@@ -147,10 +147,10 @@ namespace Textový.editor
             }
 
             Console.WriteLine("");
-            string[] mm = new string[4] { "Přečtení souboru", "Změna souboru", "Zpět do menu", "Ukončení" };
+            string[] mm = new string[2] { "Zpět do menu", "Ukončení" };
             
             Findmenu:
-            prostePotrebny1(soubor, DecisionMaker(4, mm, ConsoleColor.White, ConsoleColor.Blue));
+            prostePotrebny1(soubor, DecisionMaker(2, mm, ConsoleColor.White, ConsoleColor.Blue)+2);//tohle určitě napsal lukáš
             Console.ReadKey(); goto Findmenu;
         }
         private static void prostePotrebny()
@@ -197,37 +197,38 @@ namespace Textový.editor
                 if (decision == 2)
 
                 {
-                    string[] pole = new string[3];
-                    pole[0] = "new file";
-                    pole[1] = "find file";
-                    pole[2] = "delete file";
-                    int result = DecisionMaker(3, pole, ConsoleColor.White, ConsoleColor.Blue);
 
-                    if (result == 0)
-                    {
-                        CreateNewFile();
-                    }
+                string[] pole = new string[4];
+                pole[0] = "create new file";
+                pole[1] = "find file";
+                pole[2] = "delete file";
+                pole[3] = "exit";
 
-                    if (result == 1)
-                    {
-                        FindFile();
-                    }
+                int result = DecisionMaker(4, pole, ConsoleColor.White, ConsoleColor.Blue);
 
-                    if (result == 2)
-                    {
-                        DeleteFile();
-                    }
+                if (result == 0)
+                {
+                    CreateNewFile();
+                }
+                if (result == 1)
+                {
+                    FindFile();
+                }
+                if (result == 2)
+                {
+                    DeleteFile();
+                }
+                if (result == 3)
+                {
+                    Environment.Exit(0);
+                }
                 }
 
                 if (decision == 3)
                 {
                     Environment.Exit(0);
                 }
-            
         }
-
-
-
         static void PrecteniSlozky(string soubor)
         {
             if (File.Exists(soubor))
