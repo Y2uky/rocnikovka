@@ -76,6 +76,7 @@ namespace Textový.editor
         {
         Soubor:
             Console.WriteLine("   [Napište název souboru: ]");
+            Console.WriteLine("   [ Pro návrat do menu napište menu ]");
             Console.WriteLine("");
 
             string soubor = Console.ReadLine() + ".txt";
