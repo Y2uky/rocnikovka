@@ -9,12 +9,8 @@ namespace Textový.editor
 {
     internal class Program
     {
-
         static void Main(string[] args)
         {
-
-
-
             string[] pole = new string[3];
             pole[0] = "create new file";
             pole[1] = "find file";
@@ -26,28 +22,18 @@ namespace Textový.editor
             {
                 CreateNewFile();
             }
-
             if (result == 1)
             {
                 FindFile();
             }
-
             if (result == 2)
             {
                 DeleteFile();
             }
-
-
         }
-
-
-
         static void CreateNewFile()
         {
-
-
         Opak:
-
             Console.WriteLine("   [Napište název souboru: ]");
             Console.WriteLine("");
             string soubor = Console.ReadLine() + ".txt";
@@ -73,29 +59,19 @@ namespace Textový.editor
 
             }
 
-
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("[ (read)  přečtení souboru ]");
-            Console.WriteLine("[ (write) pro změnu souboru ]");
-            Console.WriteLine("[ (menu) pro vrácení na menu ]");
-            Console.WriteLine("[ (exit) pro ukončení ]");
-            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("");
-
-            prostePotrebny1(soubor);
+            string[] mm = new string[4] { "Přečtení souboru", "Změna souboru", "Zpět do menu", "Ukončení" };
+            
+            Findmenu:
+            prostePotrebny1(soubor, DecisionMaker(4, mm, ConsoleColor.White, ConsoleColor.Blue));
+            Console.ReadKey(); goto Findmenu;
         }
 
         static void FindFile()
         {
-
-
-
         Soubor:
-
             Console.WriteLine("   [Napište název souboru: ]");
             Console.WriteLine("");
-
-
 
             string soubor = Console.ReadLine() + ".txt";
 
@@ -113,25 +89,22 @@ namespace Textový.editor
                 Console.WriteLine("");
                 goto Soubor;
             }
-
+            Findmenu:
             Console.WriteLine("");
-            Console.ForegroundColor = ConsoleColor.Blue;
+            string[] mm = new string[4] { "Přečtení souboru", "Změna souboru", "Zpět do menu", "Ukončení" };
+            /*
             Console.WriteLine("[ (read)  přečtení souboru ]");
             Console.WriteLine("[ (write) pro změnu souboru ]");
             Console.WriteLine("[ (menu) pro vrácení na menu ]");
             Console.WriteLine("[ (exit) pro ukončení ]");
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("");
+            Console.WriteLine("");*/
 
-
-            prostePotrebny1(soubor);
+            prostePotrebny1(soubor, DecisionMaker(4, mm, ConsoleColor.White, ConsoleColor.Blue));
+            Console.ReadKey();goto Findmenu;
         }
 
         private static void DeleteFile()
         {
-
-
-
         Soubor:
             Console.WriteLine("   [ Napiste nazev souboru ]");
             Console.WriteLine("");
@@ -152,9 +125,6 @@ namespace Textový.editor
                 Console.WriteLine("");
                 goto Soubor;
             }
-
-
-
             try
             {
                 // Check if file exists with its full path    
@@ -175,19 +145,15 @@ namespace Textový.editor
                 Console.WriteLine(ioExp.Message);
             }
 
-            prostePotrebny1(soubor);
-
+            Console.WriteLine("");
+            string[] mm = new string[4] { "Přečtení souboru", "Změna souboru", "Zpět do menu", "Ukončení" };
+            
+            Findmenu:
+            prostePotrebny1(soubor, DecisionMaker(4, mm, ConsoleColor.White, ConsoleColor.Blue));
+            Console.ReadKey(); goto Findmenu;
         }
-
-
-
-
         private static void prostePotrebny()
         {
-
-
-
-
             string[] pole = new string[3];
             pole[0] = "new file";
             pole[1] = "find file";
@@ -208,17 +174,12 @@ namespace Textový.editor
             {
                 DeleteFile();
             }
-
-
         }
 
-        private static void prostePotrebny1(string soubor)
+        private static void prostePotrebny1(string soubor, int decision)
         {
-
-            while (true)
-            {
-                string idk = Console.ReadLine();
-                if (idk == "read")
+            
+                if (decision == 0)
                 {
                     Console.WriteLine("");
                     Console.Write(" :  "); PrecteniSlozky(soubor);
@@ -226,13 +187,13 @@ namespace Textový.editor
                     Console.WriteLine("");
                 }
 
-                if (idk == "write")
+                if (decision == 1)
                 {
                     Console.WriteLine("");
                     Console.Write(""); ZapisDoSložky(soubor);
                     Console.WriteLine("");
                 }
-                if (idk == "menu")
+                if (decision == 2)
 
                 {
                     string[] pole = new string[3];
@@ -257,11 +218,11 @@ namespace Textový.editor
                     }
                 }
 
-                if (idk == "exit")
+                if (decision == 3)
                 {
                     Environment.Exit(0);
                 }
-            }
+            
         }
 
 
@@ -282,8 +243,6 @@ namespace Textový.editor
                 Console.WriteLine(" [soubor neexistuje!]");
                 Console.ForegroundColor = ConsoleColor.White;
             }
-
-
         }
 
         static void ZapisDoSložky(string soubor)
@@ -306,9 +265,6 @@ namespace Textový.editor
                 Console.ForegroundColor = ConsoleColor.White;
             }
         }
-
-
-
         public static int DecisionMaker(int decisionNum, string[] decisions, ConsoleColor mainColor, ConsoleColor highlightColor)
         {
             int currentDecision = 0;
@@ -322,8 +278,6 @@ namespace Textový.editor
                 Console.WriteLine("       []    []         []    [][][]      []       []  []     []  [][][]  []  []   [][]                   ");
                 Console.WriteLine("       []     [][]    []  []    []        [][][]    [][] []   []    []     [][]     []                ");
                 Console.WriteLine("");
-
-
 
                 for (int i = 0; i < decisionNum; i++)
                 {

@@ -6,3 +6,11 @@ C:\Users\pozlerl\source\repos\Mo2L03k\Mo2L03k\obj\Debug\Mo2L03k.csproj.Suggested
 C:\Users\pozlerl\source\repos\Mo2L03k\Mo2L03k\obj\Debug\Mo2L03k.csproj.CoreCompileInputs.cache
 C:\Users\pozlerl\source\repos\Mo2L03k\Mo2L03k\obj\Debug\Mo2L03k.exe
 C:\Users\pozlerl\source\repos\Mo2L03k\Mo2L03k\obj\Debug\Mo2L03k.pdb
+C:\Users\rohacekd\Documents\GitHub\rocnikovka\Mo2L03k\Mo2L03k\bin\Debug\Mo2L03k.exe.config
+C:\Users\rohacekd\Documents\GitHub\rocnikovka\Mo2L03k\Mo2L03k\bin\Debug\Mo2L03k.exe
+C:\Users\rohacekd\Documents\GitHub\rocnikovka\Mo2L03k\Mo2L03k\bin\Debug\Mo2L03k.pdb
+C:\Users\rohacekd\Documents\GitHub\rocnikovka\Mo2L03k\Mo2L03k\obj\Debug\Mo2L03k.csproj.AssemblyReference.cache
+C:\Users\rohacekd\Documents\GitHub\rocnikovka\Mo2L03k\Mo2L03k\obj\Debug\Mo2L03k.csproj.SuggestedBindingRedirects.cache
+C:\Users\rohacekd\Documents\GitHub\rocnikovka\Mo2L03k\Mo2L03k\obj\Debug\Mo2L03k.csproj.CoreCompileInputs.cache
+C:\Users\rohacekd\Documents\GitHub\rocnikovka\Mo2L03k\Mo2L03k\obj\Debug\Mo2L03k.exe
+C:\Users\rohacekd\Documents\GitHub\rocnikovka\Mo2L03k\Mo2L03k\obj\Debug\Mo2L03k.pdb
