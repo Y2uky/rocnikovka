@@ -149,31 +149,34 @@ namespace Textový.editor
             Console.WriteLine("");
             string[] mm = new string[2] { "Zpět do menu", "Ukončení" };
             
-            Findmenu:
-            prostePotrebny1(soubor, DecisionMaker(2, mm, ConsoleColor.White, ConsoleColor.Blue)+2);//tohle určitě napsal lukáš
-            Console.ReadKey(); goto Findmenu;
+            prostePotrebny1(soubor, 2);//tohle určitě napsal lukáš
+            Console.ReadKey();
         }
         private static void prostePotrebny()
         {
-            string[] pole = new string[3];
-            pole[0] = "new file";
+            string[] pole = new string[4];
+            pole[0] = "create new file";
             pole[1] = "find file";
             pole[2] = "delete file";
-            int result = DecisionMaker(3, pole, ConsoleColor.White, ConsoleColor.Blue);
+            pole[3] = "exit";
+
+            int result = DecisionMaker(4, pole, ConsoleColor.White, ConsoleColor.Blue);
 
             if (result == 0)
             {
                 CreateNewFile();
             }
-
             if (result == 1)
             {
                 FindFile();
             }
-
             if (result == 2)
             {
                 DeleteFile();
+            }
+            if (result == 3)
+            {
+                Environment.Exit(0);
             }
         }
 
