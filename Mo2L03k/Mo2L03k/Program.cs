@@ -277,7 +277,7 @@ namespace Textový.editor
                 Console.WriteLine("    [][][][]                              [][][]              []                                 ");
                 Console.WriteLine("       []      []               []        []           []           []                               ");
                 Console.WriteLine("       []    [][][]   []  []    []        [][][]     [][]     []    []     [][]     []                 ");
-                Console.WriteLine("       []    []         []    [][][]      []       []  []     []  [][][]  []  []   [][]                   ");
+                Console.WriteLine("       []    []         []    [][][]      []       []  []     []  [][][]  []  []    [][]                   ");
                 Console.WriteLine("       []     [][]    []  []    []        [][][]    [][] []   []    []     [][]     []                ");
                 Console.WriteLine("");
 
