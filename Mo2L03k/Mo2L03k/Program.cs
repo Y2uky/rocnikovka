@@ -137,6 +137,7 @@ namespace Textový.editor
                     Console.WriteLine(" [ soubor byl smazán ]");
                     Console.ForegroundColor = ConsoleColor.White;
                     Console.WriteLine("");
+                    Console.WriteLine("[stisněte enter pro návrat do menu]");Console.ReadKey();
                 }
             }
 
